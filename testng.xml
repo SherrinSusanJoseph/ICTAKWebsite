@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="qa.testcases.Membership_TC"/>
+      <class name="qa.testcases.Login_TC"/>
+      <class name="qa.testcases.Contact_TC"/>
+      <class name="qa.testcases.Courses_TC"/>
+      <class name="qa.testcases.Event_TC"/>
+      <class name="qa.testcases.Industrial_TC"/>
+      <class name="qa.testcases.Knowledge_TC"/>
+      <class name="qa.testcases.Landing_TC"/>
+      <class name="qa.testcases.Logout_TC"/>
+      <class name="qa.testcases.Patrons_TC"/>
+      <class name="qa.testcases.Testimonial_TC"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
