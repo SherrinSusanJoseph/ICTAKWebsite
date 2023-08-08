@@ -44,19 +44,20 @@ public class Knowledge_TC extends BaseClass{
 		String txt=knwpage.add_knw_link();
 		Assert.assertEquals(txt, "New knowledge partner");
 		System.out.println("Got New Knowledge partner window");
-		Thread.sleep(2000);
+	
 	}
 	@Test(priority=3)
 	public void delete_file_yes() throws InterruptedException
 	{
-		knwpage.delete_partner();
-		Thread.sleep(2000);
+		String txt=knwpage.delete_partner();
+		Assert.assertEquals(txt, "Successfully Deleted");
+		
 	}
+	
 	@AfterMethod
 	public void tearDown() throws InterruptedException
 	{
 		driver.close();
-		Thread.sleep(2000);
 	}
 }
 		
