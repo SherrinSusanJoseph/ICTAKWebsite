@@ -40,6 +40,9 @@ public class KnowledgePage extends BaseClass{
 		@FindBy(xpath = "//button[contains(text(),'Yes, Delete it!')]")
 		WebElement delete_yes;
 		
+		@FindBy(xpath = "//h2[@id=\"swal2-title\"]")
+		WebElement message;
+		
 		@FindBy(xpath = "//button[contains(text(),'OK')]")
 		WebElement delete_success;
 		
@@ -64,18 +67,13 @@ public class KnowledgePage extends BaseClass{
 			String text=choose_text.getText();
 			return text;
 		}*/
-		public void delete_partner()
+		public String delete_partner()
 		{
-			
-			String c=deleted.getText();
 			delete.click();
 			delete_yes.click();
 			delete_success.click();
-			if (deleted.getText()==c)
-				System.out.println("Not deleted");
-			else
-				System.out.println("Deleted");
-				
+			String txt=message.getText();
+			return txt;
 		}
 		
 }
