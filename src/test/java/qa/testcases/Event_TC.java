@@ -3,6 +3,7 @@ package qa.testcases;
 import qa.base.BaseClass;
 import qa.pages.EventPage;
 
+import org.testng.annotations.AfterMethod;
 //import org.openqa.selenium.By;
 //import org.openqa.selenium.WebElement;
 //import org.openqa.selenium.interactions.Actions;
@@ -21,7 +22,11 @@ public class Event_TC extends BaseClass {
 		
 	}
 	
-	
+	@AfterMethod
+	public void tearDown()
+	{
+		driver.close();
+	}
 	
 
 }
