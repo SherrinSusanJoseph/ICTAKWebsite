@@ -18,7 +18,7 @@ public class EventPage extends BaseClass{
     @FindBy(xpath = "//body/app-root/app-about-main[@class='ng-star-inserted']/app-header/div[@class='container position-sticky z-index-sticky top-0']/div[@class='row']/div[@class='col-12']/nav[@class='navbar navbar-expand-lg blur border-radius-xl top-0 z-index-fixed shadow position-absolute my-3 py-2 start-0 end-0 mx-4']/div[@class='container-fluid px-0']/div[@id='navigation']/ul[@class='navbar-nav navbar-nav-hover ms-auto']/li[5]/a[1]")
     WebElement Events;
 	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-home-main[1]/app-header[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/ul[1]/li[5]/ul[1]/div[1]/ul[1]/li[1]/a[1]")
-	WebElement ICSET;//Correct all xpaths
+	WebElement ICSET;
 	@FindBy(xpath = "//a[@id='v-pills-home-tab']")
 	WebElement About;	
 	@FindBy(xpath = "//a[@id='v-pills-profile-tab']")
@@ -45,7 +45,7 @@ public class EventPage extends BaseClass{
 	WebElement ICTAKevent;
 	
 	public void event_method()	
-	{		//Use webelements directly
+{		
 		Actions act=new Actions(driver);
 		//act.moveToElement(Events).build().perform();
 		act.moveToElement(driver.findElement(By.xpath("//body/app-root/app-home-main/app-header/div[@class='container position-sticky z-index-sticky top-0']/div[@class='row']/div[@class='col-12']/nav[@class='navbar navbar-expand-lg blur border-radius-xl top-0 z-index-fixed shadow position-absolute my-3 py-2 start-0 end-0 mx-4']/div[@class='container-fluid px-0']/div[@id='navigation']/ul[@class='navbar-nav navbar-nav-hover ms-auto']/li[5]/a[1]"))).build().perform();		
