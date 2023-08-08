@@ -1,5 +1,7 @@
 package qa.testcases;
 
+import java.time.Duration;
+
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -22,6 +24,7 @@ public class Courses_TC extends BaseClass{
 	@Test(priority=1)
 	public void course_link()
 	{
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		coursepage.course_link();
 		String txt=coursepage.get_text();
 		Assert.assertEquals(txt, "Courses List");
@@ -59,9 +62,23 @@ public class Courses_TC extends BaseClass{
 		Assert.assertEquals(txt, "OK");
 		System.out.println("Successfully Deleted");
 	}
+	
+	//Add courses to the list
+	@Test(priority=6)
+	public void add_courses() throws Exception
+	{
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		coursepage.course_link();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		coursepage.add_course_method();
+		
+		
+		
+	}
+	
 	@AfterMethod
 	public void tearDown()
 	{
-		driver.close();
+		//driver.close();
 	}
 }
