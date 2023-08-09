@@ -50,5 +50,22 @@ public class MembershipPage extends BaseClass{
     	partnership.click();
     	partnershipDownload.click();
     }
+    public String AcadamicMembership_valid()
+	{
+		String txtlink1=acadamicMembership.getText();
+		return txtlink1;		
+	}
+	public String CorporateMembership_valid()
+	{
+		String txtlink2=corporateMembership.getText();
+		return txtlink2;		
+	}
+	public String Partnership_valid()
+	{
+		String txtlink3=partnership.getText();
+		return txtlink3;		
+	}
+	
+	
       
 }
