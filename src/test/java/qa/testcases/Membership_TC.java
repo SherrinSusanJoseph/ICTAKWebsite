@@ -1,3 +1,5 @@
+
+       
 package qa.testcases;
 
 import java.io.IOException;
@@ -5,6 +7,7 @@ import java.time.Duration;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.testng.Assert;
 import qa.Utilities.ExcelUtility;
 import qa.base.BaseClass;
 import qa.pages.CourseregisterationPage;
@@ -30,27 +33,42 @@ public class Membership_TC extends BaseClass {
 		loginpage.login_method_admin(User,Pwd);
 	}
 		
-	@Test(priority = 1)
-	public void academic_membership_links_check() throws InterruptedException{
-		membershippage.clickAcadamicMembership();
-		Thread.sleep(2000);//add assertion
-	}
-		
-	@Test(priority = 2)
-	public void corporate_membership_linls_check() throws InterruptedException{
-		membershippage.clickCorporateMembership();
-		Thread.sleep(2000);
-	}
-	
-	@Test(priority = 3)
-	public void partnership_membership_linls_check() throws InterruptedException{
-		membershippage.clickPartnership();
-		Thread.sleep(2000);
-	}
-	
-	@AfterMethod
+	 @Test(priority=1)
+        public void testAcademicMembershipLink() {
+            membershippage.hoverOverMembershipMenu();
+            membershippage.clickAcadamicMembership();
+           String actualAcademicMembershipText = membershippage.AcadamicMembership_valid();
+           String expectedAcademicMembershipText = "Acadamic Membership";
+           Assert.assertEquals(actualAcademicMembershipText, expectedAcademicMembershipText);
+    }
+
+      @Test(priority=2)
+       public void testCorporateMembershipLink() {
+               membershippage.hoverOverMembershipMenu();
+               membershippage.clickCorporateMembership();
+               String actualCorporateMembershipText = membershippage.CorporateMembership_valid();
+               String expectedCorporateMembershipText = "Corporate Membership";
+               Assert.assertEquals(actualCorporateMembershipText, expectedCorporateMembershipText);
+    }
+
+    @Test
+    public void testPartnershipLink() {
+        
+          membershippage.hoverOverMembershipMenu();
+          membershippage.clickPartnership();
+          String actualPartnershipText = membershippage.Partnership_valid();
+           String expectedPartnershipText = "Partnership";
+          Assert.assertEquals(actualPartnershipText, expectedPartnershipText);
+    }
+
+      @AfterMethod
 	public void clearMethod(){
 		driver.close();
 	}
 		
 }
+	
+	
+	
+
+
